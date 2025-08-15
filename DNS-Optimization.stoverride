@@ -99,7 +99,7 @@ rules:
 
 proxy-groups:
   - name: OpenAI_Net
-    type: url_test
+    type: url-test
     proxies:
      - JP 01
      - JP 02
