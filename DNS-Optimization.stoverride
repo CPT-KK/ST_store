@@ -1,8 +1,8 @@
 name: KK-DNS
 desc: 优化 DNS 选择
 author: KK
-homepage: ""
-icon: ""
+homepage: "https://github.com/CPT-KK/ST_store"
+icon: "https://github.com/account"
 category: "Optimization"
 
 dns: #!replace
