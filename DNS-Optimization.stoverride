@@ -1,0 +1,119 @@
+name: KK-DNS
+desc: 优化 DNS 选择
+author: KK
+homepage: ""
+icon: ""
+category: "Optimization"
+
+dns: #!replace
+  enable: true
+  ipv6: true
+  use-system-hosts: true
+  prefer-h3: true
+  default-nameserver:
+    - 10.0.0.11
+    - 223.5.5.5
+    - 114.114.114.114
+    - 119.28.28.28
+    - 8.8.8.8
+    - 1.1.1.1
+    - tls://8.8.4.4:853
+    - '[2402:4e00::]:53'
+    - '[2400:3200::1]:53'
+    - '[2001:4860:4860::8888]:53'
+    - '[2606:4700:4700::1111]:53'
+  nameserver:
+    - 10.0.0.12
+    - https://dns.alidns.com/dns-query
+    - https://1.12.12.12/dns-query
+    - https://doh.pub/dns-query
+    - https://doh.360.cn/dns-query
+  direct-nameserver:
+    - 10.0.0.12
+    - https://dns.alidns.com/dns-query
+    - https://1.12.12.12/dns-query
+    - https://doh.pub/dns-query
+    - https://doh.360.cn/dns-query
+  fallback:
+    - https://doh.pub/dns-query
+    - https://1.0.0.1/dns-query
+    - https://1.1.1.1/dns-query
+    - https://dns.google/dns-query
+    - tls://8.8.4.4:853
+  fake-ip-filter:
+    - geosite:cn
+    - private
+    - connectivity-check
+  nameserver-policy: {}
+
+rules:
+  - DOMAIN-SUFFIX, bing.com, DIRECT
+  - DOMAIN-SUFFIX, aiaa.org, DIRECT
+  - DOMAIN-SUFFIX, ieee.org, DIRECT
+  - DOMAIN-SUFFIX, ipify.org, DIRECT
+  - DOMAIN-SUFFIX, ident.me, DIRECT
+  - DOMAIN-SUFFIX, cptkk.top, DIRECT
+  - DOMAIN-SUFFIX, webofscience.com, DIRECT
+  - DOMAIN-SUFFIX, twitch.tv, NaiU_Net
+  - DOMAIN-SUFFIX, test-ipv6.com, DIRECT
+  - DOMAIN-SUFFIX, zxinc.org, DIRECT
+  - DOMAIN-SUFFIX, hdslb.com, DIRECT
+  - DOMAIN-SUFFIX, bit.edu.cn, DIRECT, no-resolve
+  - DOMAIN-SUFFIX, sciencedirect.com, DIRECT
+  - DOMAIN-KEYWORD, adobe.com, DIRECT
+  - DOMAIN-KEYWORD, elsevier.com, DIRECT
+  - DOMAIN, browser-intake-datadoghq.com, OOpenAI
+  - DOMAIN, chat.openai.com.cdn.cloudflare.net, OOpenAI
+  - DOMAIN, openai-api.arkoselabs.com, OOpenAI
+  - DOMAIN, openaicom-api-bdcpf8c6d2e9atf6.z01.azurefd.net, OOpenAI
+  - DOMAIN, openaicomproductionae4b.blob.core.windows.net, OOpenAI
+  - DOMAIN, production-openaicom-storage.azureedge.net, OOpenAI
+  - DOMAIN, static.cloudflareinsights.com, OOpenAI
+  - DOMAIN-SUFFIX, ai.com, OOpenAI
+  - DOMAIN-SUFFIX, algolia.net, OOpenAI
+  - DOMAIN-SUFFIX, api.statsig.com, OOpenAI
+  - DOMAIN-SUFFIX, auth0.com, OOpenAI
+  - DOMAIN-SUFFIX, chatgpt.com, OOpenAI
+  - DOMAIN-SUFFIX, chatgpt.livekit.cloud, OOpenAI
+  - DOMAIN-SUFFIX, client-api.arkoselabs.com, OOpenAI
+  - DOMAIN-SUFFIX, events.statsigapi.net, OOpenAI
+  - DOMAIN-SUFFIX, featuregates.org, OOpenAI
+  - DOMAIN-SUFFIX, host.livekit.cloud, OOpenAI
+  - DOMAIN-SUFFIX, identrust.com, OOpenAI
+  - DOMAIN-SUFFIX, intercom.io, OOpenAI
+  - DOMAIN-SUFFIX, intercomcdn.com, OOpenAI
+  - DOMAIN-SUFFIX, launchdarkly.com, OOpenAI
+  - DOMAIN-SUFFIX, oaistatic.com, OOpenAI
+  - DOMAIN-SUFFIX, oaiusercontent.com, OOpenAI
+  - DOMAIN-SUFFIX, observeit.net, OOpenAI
+  - DOMAIN-SUFFIX, openai.com, OOpenAI
+  - DOMAIN-SUFFIX, openaiapi-site.azureedge.net, OOpenAI
+  - DOMAIN-SUFFIX, openaicom.imgix.net, OOpenAI
+  - DOMAIN-SUFFIX, segment.io, OOpenAI
+  - DOMAIN-SUFFIX, sentry.io, OOpenAI
+  - DOMAIN-SUFFIX, stripe.com, OOpenAI
+  - DOMAIN-SUFFIX, turn.livekit.cloud, OOpenAI
+  - DOMAIN-KEYWORD, openai, OOpenAI
+  - IP-CIDR, 24.199.123.28/32, OOpenAI
+  - IP-CIDR, 64.23.132.171/32, OOpenAI
+
+proxy-groups:
+  - name: OOpenAI
+    type: select
+    proxies:
+    - JP 01
+    - JP 02
+    - JP 03
+    - JP 04
+    - JP 05
+    - JP 06
+    - JP 07 x0.2
+    - JP 08 x0.2
+    - US 01
+    - US 02
+    - US 03
+    - US 04
+    - US 05
+    - US 06
+    - US 07 x0.2
+    - US 08 x0.2
