@@ -62,58 +62,60 @@ rules:
   - DOMAIN-SUFFIX, sciencedirect.com, DIRECT
   - DOMAIN-KEYWORD, adobe.com, DIRECT
   - DOMAIN-KEYWORD, elsevier.com, DIRECT
-  - DOMAIN, browser-intake-datadoghq.com, OOpenAI
-  - DOMAIN, chat.openai.com.cdn.cloudflare.net, OOpenAI
-  - DOMAIN, openai-api.arkoselabs.com, OOpenAI
-  - DOMAIN, openaicom-api-bdcpf8c6d2e9atf6.z01.azurefd.net, OOpenAI
-  - DOMAIN, openaicomproductionae4b.blob.core.windows.net, OOpenAI
-  - DOMAIN, production-openaicom-storage.azureedge.net, OOpenAI
-  - DOMAIN, static.cloudflareinsights.com, OOpenAI
-  - DOMAIN-SUFFIX, ai.com, OOpenAI
-  - DOMAIN-SUFFIX, algolia.net, OOpenAI
-  - DOMAIN-SUFFIX, api.statsig.com, OOpenAI
-  - DOMAIN-SUFFIX, auth0.com, OOpenAI
-  - DOMAIN-SUFFIX, chatgpt.com, OOpenAI
-  - DOMAIN-SUFFIX, chatgpt.livekit.cloud, OOpenAI
-  - DOMAIN-SUFFIX, client-api.arkoselabs.com, OOpenAI
-  - DOMAIN-SUFFIX, events.statsigapi.net, OOpenAI
-  - DOMAIN-SUFFIX, featuregates.org, OOpenAI
-  - DOMAIN-SUFFIX, host.livekit.cloud, OOpenAI
-  - DOMAIN-SUFFIX, identrust.com, OOpenAI
-  - DOMAIN-SUFFIX, intercom.io, OOpenAI
-  - DOMAIN-SUFFIX, intercomcdn.com, OOpenAI
-  - DOMAIN-SUFFIX, launchdarkly.com, OOpenAI
-  - DOMAIN-SUFFIX, oaistatic.com, OOpenAI
-  - DOMAIN-SUFFIX, oaiusercontent.com, OOpenAI
-  - DOMAIN-SUFFIX, observeit.net, OOpenAI
-  - DOMAIN-SUFFIX, openai.com, OOpenAI
-  - DOMAIN-SUFFIX, openaiapi-site.azureedge.net, OOpenAI
-  - DOMAIN-SUFFIX, openaicom.imgix.net, OOpenAI
-  - DOMAIN-SUFFIX, segment.io, OOpenAI
-  - DOMAIN-SUFFIX, sentry.io, OOpenAI
-  - DOMAIN-SUFFIX, stripe.com, OOpenAI
-  - DOMAIN-SUFFIX, turn.livekit.cloud, OOpenAI
-  - DOMAIN-KEYWORD, openai, OOpenAI
-  - IP-CIDR, 24.199.123.28/32, OOpenAI
-  - IP-CIDR, 64.23.132.171/32, OOpenAI
+  - DOMAIN, browser-intake-datadoghq.com, OpenAI_Net
+  - DOMAIN, chat.openai.com.cdn.cloudflare.net, OpenAI_Net
+  - DOMAIN, openai-api.arkoselabs.com, OpenAI_Net
+  - DOMAIN, openaicom-api-bdcpf8c6d2e9atf6.z01.azurefd.net, OpenAI_Net
+  - DOMAIN, openaicomproductionae4b.blob.core.windows.net, OpenAI_Net
+  - DOMAIN, production-openaicom-storage.azureedge.net, OpenAI_Net
+  - DOMAIN, static.cloudflareinsights.com, OpenAI_Net
+  - DOMAIN-SUFFIX, ai.com, OpenAI_Net
+  - DOMAIN-SUFFIX, algolia.net, OpenAI_Net
+  - DOMAIN-SUFFIX, api.statsig.com, OpenAI_Net
+  - DOMAIN-SUFFIX, auth0.com, OpenAI_Net
+  - DOMAIN-SUFFIX, chatgpt.com, OpenAI_Net
+  - DOMAIN-SUFFIX, chatgpt.livekit.cloud, OpenAI_Net
+  - DOMAIN-SUFFIX, client-api.arkoselabs.com, OpenAI_Net
+  - DOMAIN-SUFFIX, events.statsigapi.net, OpenAI_Net
+  - DOMAIN-SUFFIX, featuregates.org, OpenAI_Net
+  - DOMAIN-SUFFIX, host.livekit.cloud, OpenAI_Net
+  - DOMAIN-SUFFIX, identrust.com, OpenAI_Net
+  - DOMAIN-SUFFIX, intercom.io, OpenAI_Net
+  - DOMAIN-SUFFIX, intercomcdn.com, OpenAI_Net
+  - DOMAIN-SUFFIX, launchdarkly.com, OpenAI_Net
+  - DOMAIN-SUFFIX, oaistatic.com, OpenAI_Net
+  - DOMAIN-SUFFIX, oaiusercontent.com, OpenAI_Net
+  - DOMAIN-SUFFIX, observeit.net, OpenAI_Net
+  - DOMAIN-SUFFIX, openai.com, OpenAI_Net
+  - DOMAIN-SUFFIX, openaiapi-site.azureedge.net, OpenAI_Net
+  - DOMAIN-SUFFIX, openaicom.imgix.net, OpenAI_Net
+  - DOMAIN-SUFFIX, segment.io, OpenAI_Net
+  - DOMAIN-SUFFIX, sentry.io, OpenAI_Net
+  - DOMAIN-SUFFIX, stripe.com, OpenAI_Net
+  - DOMAIN-SUFFIX, turn.livekit.cloud, OpenAI_Net
+  - DOMAIN-KEYWORD, openai, OpenAI_Net
+  - IP-CIDR, 24.199.123.28/32, OpenAI_Net
+  - IP-CIDR, 64.23.132.171/32, OpenAI_Net
 
 proxy-groups:
-  - name: OOpenAI
-    type: select
+  - name: OpenAI_Net
+    type: url_test
     proxies:
-    - JP 01
-    - JP 02
-    - JP 03
-    - JP 04
-    - JP 05
-    - JP 06
-    - JP 07 x0.2
-    - JP 08 x0.2
-    - US 01
-    - US 02
-    - US 03
-    - US 04
-    - US 05
-    - US 06
-    - US 07 x0.2
-    - US 08 x0.2
+     - JP 01
+     - JP 02
+     - JP 03
+     - JP 04
+     - JP 05
+     - JP 06
+     - JP 07 x0.2
+     - JP 08 x0.2
+     - US 01
+     - US 02
+     - US 03
+     - US 04
+     - US 05
+     - US 06
+     - US 07 x0.2
+     - US 08 x0.2
+    url: http://chatgpt.com
+    interval: 600
