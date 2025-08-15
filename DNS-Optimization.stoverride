@@ -119,3 +119,4 @@ proxy-groups:
      - US 08 x0.2
     url: http://chatgpt.com
     interval: 600
+
