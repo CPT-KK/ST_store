@@ -101,14 +101,6 @@ proxy-groups:
   - name: OpenAI_Net
     type: url-test
     proxies:
-     - JP 01
-     - JP 02
-     - JP 03
-     - JP 04
-     - JP 05
-     - JP 06
-     - JP 07 x0.2
-     - JP 08 x0.2
      - US 01
      - US 02
      - US 03
