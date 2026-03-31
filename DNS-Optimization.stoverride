@@ -54,7 +54,7 @@ rules:
   - DOMAIN-SUFFIX, ident.me, DIRECT
   - DOMAIN-SUFFIX, cptkk.top, DIRECT
   - DOMAIN-SUFFIX, cocalab.cloud, DIRECT
-  - DOMAIN-SUFFIX, webofscience.DIRECT
+  - DOMAIN-SUFFIX, webofscience.com, DIRECT
   - DOMAIN-SUFFIX, test-ipv6.com, DIRECT
   - DOMAIN-SUFFIX, zxinc.org, DIRECT
   - DOMAIN-SUFFIX, hdslb.com, DIRECT
